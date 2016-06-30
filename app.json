@@ -1,0 +1,13 @@
+{
+  "name": "afrostream-api",
+  "description": "Afrostream golang High Level wrapper around Afrostream PF",
+  "keywords": [
+    "afrostream",
+    "go",
+    "pf"
+  ],
+  "image": "heroku/go:1.6",
+  "mount_dir": "src/github.com/afrostream/afrostream-api",
+  "website": "https://github.com/heroku/afrostream-api",
+  "repository": "https://github.com/heroku/afrostream-api"
+}
