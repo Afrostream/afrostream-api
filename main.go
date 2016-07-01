@@ -1,9 +1,7 @@
 package main
 
 import (
-	"log"
 	"net/http"
-	"os"
 
 	"github.com/gorilla/mux"
 )
@@ -13,13 +11,11 @@ func Index(res http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "9000"
-	}
-	r := mux.NewRouter()
-	r.HandleFunc("/", Index)
+	var server *Server
+	var router *mux.Router
 
-	log.Printf("Starting afrostream-api on port %s", port)
-	log.Fatal(http.ListenAndServe(":"+port, r))
+	server = NewServer()
+	router = mux.NewRouter()
+	router.HandleFunc("/", Index)
+	server.Spawn(CONF_DEFAULT_PORT, router)
 }

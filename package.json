@@ -4,7 +4,7 @@
   "description": "api v2",
   "main": "main.go",
   "scripts": {
-    "dev": "go run main.go",
+    "dev": "go run *.go",
     "clean": "rm -rf dist",
     "build": "go build -v -o dist/afrostream-api",
     "build:dependency": "godep save",
@@ -16,6 +16,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engine": {
+    "golang": "1.6"
+  },
   "bugs": {
     "url": "https://github.com/Afrostream/afrostream-api/issues"
   },
