@@ -3,7 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/gorilla/mux"
+	"github.com/afrostream/afrostream-go-lib/server"
+	"github.com/gin-gonic/gin"
 )
 
 func Index(res http.ResponseWriter, req *http.Request) {
@@ -11,11 +12,11 @@ func Index(res http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	var server *Server
-	var router *mux.Router
+	var s *server.Server
 
-	server = NewServer()
-	router = mux.NewRouter()
-	router.HandleFunc("/", Index)
-	server.Spawn(CONF_DEFAULT_PORT, router)
+	s = server.New()
+	s.Engine.GET("/hello-world", func(c *gin.Context) {
+		c.String(http.StatusOK, "Hello, World!")
+	})
+	s.Spawn(CONF_DEFAULT_PORT)
 }
