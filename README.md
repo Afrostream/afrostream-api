@@ -2,12 +2,13 @@
 
 afrostream api v2
 
-# Install (dev)
+# Install
 
 ## Install golang
 
-you need golang 1.6
-you need to set your *$GOPATH* env var (assuming ~/go here.)
+you need golang 1.6   
+you need to set your *$GOPATH* env var (assuming ~/go here.)   
+(FIXME: docker)
 
 ## Install this program
 
@@ -24,10 +25,10 @@ git clone git@github.com:Afrostream/afrostream-api.git
 go get ./...
 ```
 
-to install afrostream-go-lib in "dev mode" ,
+to install afrostream-go-lib in "dev mode" ,   
 @see https://github.com/Afrostream/afrostream-go-lib
 
-# Usage (dev)
+# Usage
 
 ## start
 
